@@ -1,50 +1,123 @@
+# School Fees Management App
 
-# TypeScript
+A React Native application for managing school fees, student information, class data, and bus expenditures. This application is built using Expo for a streamlined development experience.
 
-[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
+## Features
 
+- **Dashboard**: Overview of fee collection statistics and pending tasks
+- **Fee Collection**: Record and manage student fee payments
+- **Fee Recovery**: Track and manage fee defaulters
+- **Student Management**: Add, edit, and delete student information
+- **Class Management**: Organize students by class and section
+- **Bus Expenditure**: Track and manage school bus expenses and vehicles
+- **Reports**: Generate and view various financial reports
+- **Settings**: Configure application settings
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+## Installation
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
+1. Make sure you have Node.js and npm installed
+2. Install Expo CLI globally:
+   ```
+   npm install -g expo-cli
+   ```
+3. Clone the repository
+4. Navigate to the project directory:
+   ```
+   cd SchoolFeesApp
+   ```
+5. Install dependencies:
+   ```
+   npm install
+   ```
 
-## Installing
+## Running the Application
 
-For the latest stable version:
+Start the Expo development server:
 
-```bash
-npm install -D typescript
+```
+npx expo start
 ```
 
-For our nightly builds:
+This will open the Expo DevTools in your browser. You can run the app by:
 
-```bash
-npm install -D typescript@next
+- Pressing `a` to run on an Android emulator or connected device
+- Pressing `i` to run on an iOS simulator
+- Pressing `w` to run in a web browser
+- Scanning the QR code with the Expo Go app on your physical device
+
+## Using the Application
+
+### Login
+
+Use the login screen to authenticate. For demo purposes, use:
+- Username: admin
+- Password: password
+
+### Dashboard
+
+The dashboard provides an overview of fee collection statistics, including:
+- Monthly collection trends
+- Defaulter statistics 
+- Quick actions for common tasks
+
+### Fee Collection
+
+Record fee payments:
+1. Search for a student by name or ID
+2. Select the fee type and amount
+3. Complete the payment and generate a receipt
+
+### Student Management
+
+Manage student information:
+1. View all students in a tabular format
+2. Filter students by class, section, or search term
+3. Add new students with detailed information
+4. Edit or delete existing student records
+
+### Class Management
+
+Organize and manage classes:
+1. View all classes in a tabular format
+2. Filter classes by section or search term
+3. Add new classes with details like class teacher, room number
+4. Edit or delete existing class records
+5. View students within a specific class
+
+### Bus Expenditure
+
+Track school transportation expenses:
+1. Record bus expenses with date, amount, and purpose
+2. Manage vehicle information
+3. View expense history by vehicle
+
+## Troubleshooting
+
+If you encounter navigation issues, try running the troubleshooting script:
+
+```
+node troubleshoot-navigation.js
 ```
 
-## Contribute
+For other common issues:
 
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
+1. Clear the React Native cache:
+   ```
+   npx react-native start --reset-cache
+   ```
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+2. Clear the Expo cache:
+   ```
+   expo r -c
+   ```
 
-## Documentation
+## API Integration
 
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
+This application is designed to connect with a .NET Core back-end API. Configuration for API endpoints can be found in:
+```
+src/services/api.js
+```
 
-## Roadmap
+## License
 
-For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+This project is licensed under the MIT License.
